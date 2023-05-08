@@ -6,7 +6,7 @@
 #
 #ENTRYPOINT ["java","-jar","/back-0.0.1-SNAPSHOT.jar "]
 
-FROM amazoncorretto:8
+FROM amazoncorretto:20
 
 COPY target/back-0.0.1-SNAPSHOT.jar app.jar
 
