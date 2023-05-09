@@ -2,9 +2,7 @@
 package com.portfolio.back.Service;
 
 import com.portfolio.back.Entity.Educacion;
-import com.portfolio.back.Entity.Experiencia;
 import com.portfolio.back.Repository.REducacion;
-import com.portfolio.back.Repository.RExperiencia;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
