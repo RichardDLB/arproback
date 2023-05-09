@@ -6,7 +6,7 @@ public class dtoHabilidad {
 
     @NotBlank
     private String nombre;
-    
+
     @NotBlank
     private String porcentaje;
 
@@ -33,7 +33,5 @@ public class dtoHabilidad {
     public void setPorcentaje(String porcentaje) {
         this.porcentaje = porcentaje;
     }
-    
-    
 
 }

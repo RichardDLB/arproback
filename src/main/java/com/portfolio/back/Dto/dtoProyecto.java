@@ -6,16 +6,16 @@ public class dtoProyecto {
 
     @NotBlank
     private String nombre;
-    
+
     @NotBlank
     private String descripcion;
-    
+
     @NotBlank
     private String img1;
-    
+
     @NotBlank
     private String img2;
-    
+
     @NotBlank
     private String img3;
 
@@ -69,7 +69,5 @@ public class dtoProyecto {
     public void setImg3(String img3) {
         this.img3 = img3;
     }
-    
-    
 
 }
