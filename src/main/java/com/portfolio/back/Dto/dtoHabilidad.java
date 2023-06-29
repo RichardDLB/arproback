@@ -5,33 +5,38 @@ import javax.validation.constraints.NotBlank;
 public class dtoHabilidad {
 
     @NotBlank
-    private String nombre;
+    private String nombreHabilidad;
 
     @NotBlank
-    private String porcentaje;
+    private String porcentajeHabilidad;
 
     public dtoHabilidad() {
     }
 
-    public dtoHabilidad(String nombre, String porcentaje) {
-        this.nombre = nombre;
-        this.porcentaje = porcentaje;
+    public dtoHabilidad(String nombreHabilidad, String porcentajeHabilidad) {
+        this.nombreHabilidad = nombreHabilidad;
+        this.porcentajeHabilidad = porcentajeHabilidad;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreHabilidad() {
+        return nombreHabilidad;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreHabilidad(String nombreHabilidad) {
+        this.nombreHabilidad = nombreHabilidad;
     }
 
-    public String getPorcentaje() {
-        return porcentaje;
+    public String getPorcentajeHabilidad() {
+        return porcentajeHabilidad;
     }
 
-    public void setPorcentaje(String porcentaje) {
-        this.porcentaje = porcentaje;
+    public void setPorcentajeHabilidad(String porcentajeHabilidad) {
+        this.porcentajeHabilidad = porcentajeHabilidad;
     }
+
+    @Override
+    public String toString() {
+        return "dtoHabilidad{" + "nombreHabilidad=" + nombreHabilidad + ", porcentajeHabilidad=" + porcentajeHabilidad + '}';
+    }    
 
 }

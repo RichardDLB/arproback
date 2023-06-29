@@ -5,92 +5,98 @@ import javax.validation.constraints.NotBlank;
 public class dtoPersona {
 
     @NotBlank
-    private String nombre;
+    private String nombrePersona;
     @NotBlank
-    private String apellido;
-    @NotBlank
-
-    private String profesion;
+    private String apellidoPersona;
     @NotBlank
 
-    private String imgBanner;
+    private String profesionPersona;
     @NotBlank
 
-    private String imgPerfil;
+    private String imgBannerPersona;
     @NotBlank
 
-    private String email;
+    private String imgPerfilPersona;
     @NotBlank
 
-    private String texPre;
+    private String emailPersona;
+    @NotBlank
+
+    private String texPrePersona;
 
     public dtoPersona() {
     }
 
-    public dtoPersona(String nombre, String apellido, String profesion, String imgBanner, String imgPerfil, String email, String texPre) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.profesion = profesion;
-        this.imgBanner = imgBanner;
-        this.imgPerfil = imgPerfil;
-        this.email = email;
-        this.texPre = texPre;
+    public dtoPersona(String nombrePersona, String apellidoPersona, String profesionPersona, String imgBannerPersona, String imgPerfilPersona, String emailPersona, String texPrePersona) {
+        this.nombrePersona = nombrePersona;
+        this.apellidoPersona = apellidoPersona;
+        this.profesionPersona = profesionPersona;
+        this.imgBannerPersona = imgBannerPersona;
+        this.imgPerfilPersona = imgPerfilPersona;
+        this.emailPersona = emailPersona;
+        this.texPrePersona = texPrePersona;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombrePersona() {
+        return nombrePersona;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombrePersona(String nombrePersona) {
+        this.nombrePersona = nombrePersona;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getApellidoPersona() {
+        return apellidoPersona;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellidoPersona(String apellidoPersona) {
+        this.apellidoPersona = apellidoPersona;
     }
 
-    public String getProfesion() {
-        return profesion;
+    public String getProfesionPersona() {
+        return profesionPersona;
     }
 
-    public void setProfesion(String profesion) {
-        this.profesion = profesion;
+    public void setProfesionPersona(String profesionPersona) {
+        this.profesionPersona = profesionPersona;
     }
 
-    public String getImgBanner() {
-        return imgBanner;
+    public String getImgBannerPersona() {
+        return imgBannerPersona;
     }
 
-    public void setImgBanner(String imgBanner) {
-        this.imgBanner = imgBanner;
+    public void setImgBannerPersona(String imgBannerPersona) {
+        this.imgBannerPersona = imgBannerPersona;
     }
 
-    public String getImgPerfil() {
-        return imgPerfil;
+    public String getImgPerfilPersona() {
+        return imgPerfilPersona;
     }
 
-    public void setImgPerfil(String imgPerfil) {
-        this.imgPerfil = imgPerfil;
+    public void setImgPerfilPersona(String imgPerfilPersona) {
+        this.imgPerfilPersona = imgPerfilPersona;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailPersona() {
+        return emailPersona;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailPersona(String emailPersona) {
+        this.emailPersona = emailPersona;
     }
 
-    public String getTexPre() {
-        return texPre;
+    public String getTexPrePersona() {
+        return texPrePersona;
     }
 
-    public void setTexPre(String texPre) {
-        this.texPre = texPre;
+    public void setTexPrePersona(String texPrePersona) {
+        this.texPrePersona = texPrePersona;
     }
 
+    @Override
+    public String toString() {
+        return "dtoPersona{" + "nombrePersona=" + nombrePersona + ", apellidoPersona=" + apellidoPersona + ", profesionPersona=" + profesionPersona + ", imgBannerPersona=" + imgBannerPersona + ", imgPerfilPersona=" + imgPerfilPersona + ", emailPersona=" + emailPersona + ", texPrePersona=" + texPrePersona + '}';
+    }
+
+    
 }

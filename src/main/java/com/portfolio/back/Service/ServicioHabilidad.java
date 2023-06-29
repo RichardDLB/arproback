@@ -1,8 +1,7 @@
-
 package com.portfolio.back.Service;
 
 import com.portfolio.back.Entity.Habilidad;
-import com.portfolio.back.Repository.RHabilidad;
+import com.portfolio.back.Repository.RepositorioHabilidad;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -11,36 +10,36 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class SHabilidad {
+public class ServicioHabilidad {
 
-     @Autowired
-     RHabilidad rHabilidad;
-     
-     public List<Habilidad> list(){
-         return rHabilidad.findAll();
-     }
-     
-     public Optional<Habilidad> getOne(int id){
-         return rHabilidad.findById(id);
-     }
-     
-     public Optional<Habilidad> getByNombre(String nombre){
-         return rHabilidad.findByNombre(nombre);
-     }
-     
-     public void save(Habilidad habilidad){
-         rHabilidad.save(habilidad);
-     }
-     
-     public void delete(int id){
-         rHabilidad.deleteById(id);
-     }
-     
-     public boolean existsById(int id){
-         return rHabilidad.existsById(id);
-     }
-     
-     public boolean existsByNombre(String nombre){
-         return rHabilidad.existsByNombre(nombre);
-     }
+    @Autowired
+    RepositorioHabilidad rHabilidad;
+
+    public List<Habilidad> list() {
+        return rHabilidad.findAll();
+    }
+
+    public Optional<Habilidad> getOne(int idHabilidad) {
+        return rHabilidad.findById(idHabilidad);
+    }
+
+    public Optional<Habilidad> getByNombreHabilidad(String nombreHabilidad) {
+        return rHabilidad.findByNombreHabilidad(nombreHabilidad);
+    }
+
+    public void save(Habilidad habilidad) {
+        rHabilidad.save(habilidad);
+    }
+
+    public void delete(int idHabilidad) {
+        rHabilidad.deleteById(idHabilidad);
+    }
+
+    public boolean existsById(int idHabilidad) {
+        return rHabilidad.existsById(idHabilidad);
+    }
+
+    public boolean existsByNombreHabilidad(String nombreHabilidad) {
+        return rHabilidad.existsByNombreHabilidad(nombreHabilidad);
+    }
 }

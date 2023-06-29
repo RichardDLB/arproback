@@ -2,7 +2,7 @@
 package com.portfolio.back.Service;
 
 import com.portfolio.back.Entity.Proyecto;
-import com.portfolio.back.Repository.RProyecto;
+import com.portfolio.back.Repository.RepositorioProyecto;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class SProyecto {
+public class ServicioProyecto {
     
     @Autowired
-     RProyecto rProyecto;
+     RepositorioProyecto rProyecto;
     
     public List<Proyecto> list(){
          return rProyecto.findAll();
@@ -24,24 +24,24 @@ public class SProyecto {
          return rProyecto.findById(id);
      }
      
-     public Optional<Proyecto> getByNombre(String nombre){
-         return rProyecto.findByNombre(nombre);
+     public Optional<Proyecto> getByNombreProyecto(String nombreProyecto){
+         return rProyecto.findByNombreProyecto(nombreProyecto);
      }
      
      public void save(Proyecto proyecto){
          rProyecto.save(proyecto);
      }
      
-     public void delete(int id){
-         rProyecto.deleteById(id);
+     public void delete(int idProyecto){
+         rProyecto.deleteById(idProyecto);
      }
      
-     public boolean existsById(int id){
-         return rProyecto.existsById(id);
+     public boolean existsById(int idProyecto){
+         return rProyecto.existsById(idProyecto);
      }
      
-     public boolean existsByNombre(String nombre){
-         return rProyecto.existsByNombre(nombre);
+     public boolean existsByNombreProyecto(String nombreProyecto){
+         return rProyecto.existsByNombreProyecto(nombreProyecto);
      }
 
      

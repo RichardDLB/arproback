@@ -3,7 +3,7 @@ package com.portfolio.back.Controller;
 import com.portfolio.back.Dto.dtoPersona;
 import com.portfolio.back.Entity.Persona;
 import com.portfolio.back.Security.Controller.Mensaje;
-import com.portfolio.back.Service.SPersona;
+import com.portfolio.back.Service.ServicioPersona;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/persona")
-@CrossOrigin(origins = {"https://arprofront.web.app"})
+@CrossOrigin(origins = {"https://arprofront.web.app","http://localhost:4200"})
+
 public class CPersona {
 
     @Autowired
-    SPersona sPersona;
+    ServicioPersona sPersona;
 
     @GetMapping("/lista")
     public ResponseEntity<List<Persona>> list() {
@@ -34,63 +35,63 @@ public class CPersona {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") int id) {
-        if (!sPersona.existsById(id)) {
-            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
+    public ResponseEntity<?> delete(@PathVariable("id") int idPersona) {
+        if (!sPersona.existsById(idPersona)) {
+            return new ResponseEntity(new Mensaje("id no existe"), HttpStatus.NOT_FOUND);
         }
-        sPersona.delete(id);
-        return new ResponseEntity(new Mensaje("producto eliminado"), HttpStatus.OK);
+        sPersona.delete(idPersona);
+        return new ResponseEntity(new Mensaje("id eliminada"), HttpStatus.OK);
     }
 
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Persona> getById(@PathVariable("id") int id) {
-        if (!sPersona.existsById(id)) {
-            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
+    public ResponseEntity<Persona> getById(@PathVariable("id") int idPersona) {
+        if (!sPersona.existsById(idPersona)) {
+            return new ResponseEntity(new Mensaje("id no existe"), HttpStatus.NOT_FOUND);
         }
-        Persona persona = sPersona.getOne(id).get();
+        Persona persona = sPersona.getOne(idPersona).get();
         return new ResponseEntity(persona, HttpStatus.OK);
     }
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoPersona dtopersona) {
-        if (StringUtils.isBlank(dtopersona.getNombre())) {
+        if (StringUtils.isBlank(dtopersona.getNombrePersona())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if (sPersona.existsByNombreE(dtopersona.getNombre())) {
-            return new ResponseEntity(new Mensaje("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
+        if (sPersona.existsByNombrePersona(dtopersona.getNombrePersona())) {
+            return new ResponseEntity(new Mensaje("La persona ya existe"), HttpStatus.BAD_REQUEST);
         }
 
-        Persona persona = new Persona(dtopersona.getNombre(), dtopersona.getApellido(), dtopersona.getProfesion(),
-                dtopersona.getImgBanner(), dtopersona.getImgPerfil(), dtopersona.getEmail(),
-                dtopersona.getTexPre());
+        Persona persona = new Persona(dtopersona.getNombrePersona(), dtopersona.getApellidoPersona(), dtopersona.getProfesionPersona(),
+                dtopersona.getImgBannerPersona(), dtopersona.getImgPerfilPersona(), dtopersona.getEmailPersona(),
+                dtopersona.getTexPrePersona());
         sPersona.save(persona);
 
-        return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Persona agregada"), HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoPersona dtopersona) {
+    public ResponseEntity<?> update(@PathVariable("id") int idPersona, @RequestBody dtoPersona dtopersona) {
         //Validamos si existe el ID
-        if (!sPersona.existsById(id)) {
-            return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
+        if (!sPersona.existsById(idPersona)) {
+            return new ResponseEntity(new Mensaje("id no existe"), HttpStatus.BAD_REQUEST);
         }
         //Compara nombre de experiencias
-        if (sPersona.existsByNombreE(dtopersona.getNombre()) && sPersona.getByNombre(dtopersona.getNombre()).get().getId() != id) {
+        if (sPersona.existsByNombrePersona(dtopersona.getNombrePersona()) && sPersona.getByNombrePersona(dtopersona.getNombrePersona()).get().getIdPersona() != idPersona) {
             return new ResponseEntity(new Mensaje("Esa experiencia ya existe"), HttpStatus.BAD_REQUEST);
         }
         //No puede estar vacio
-        if (StringUtils.isBlank(dtopersona.getNombre())) {
+        if (StringUtils.isBlank(dtopersona.getNombrePersona())) {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
 
-        Persona persona = sPersona.getOne(id).get();
-        persona.setNombre(dtopersona.getNombre());
-        persona.setApellido((dtopersona.getApellido()));
-        persona.setProfesion((dtopersona.getProfesion()));
-        persona.setImgBanner((dtopersona.getImgBanner()));
-        persona.setImgPerfil((dtopersona.getImgPerfil()));
-        persona.setEmail((dtopersona.getEmail()));
-        persona.setTexPre((dtopersona.getTexPre()));
+        Persona persona = sPersona.getOne(idPersona).get();
+        persona.setNombrePersona(dtopersona.getNombrePersona());
+        persona.setApellidoPersona((dtopersona.getApellidoPersona()));
+        persona.setProfesionPersona((dtopersona.getProfesionPersona()));
+        persona.setImgBannerPersona((dtopersona.getImgBannerPersona()));
+        persona.setImgPerfilPersona((dtopersona.getImgPerfilPersona()));
+        persona.setEmailPersona((dtopersona.getEmailPersona()));
+        persona.setTexPrePersona((dtopersona.getTexPrePersona()));
 
         sPersona.save(persona);
         return new ResponseEntity(new Mensaje("Experiencia actualizada"), HttpStatus.OK);

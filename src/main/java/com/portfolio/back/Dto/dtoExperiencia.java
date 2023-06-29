@@ -5,35 +5,40 @@ import javax.validation.constraints.NotBlank;
 public class dtoExperiencia {
 
     @NotBlank
-    private String nombreE;
+    private String nombreExperiencia;
 
     @NotBlank
-    private String descripcionE;
+    private String descripcionExperiencia;
 
-    //Constructores
     public dtoExperiencia() {
     }
 
-    public dtoExperiencia(String nombreE, String descripcionE) {
-        this.nombreE = nombreE;
-        this.descripcionE = descripcionE;
-    }
-    //Getters & Setters
-
-    public String getNombreE() {
-        return nombreE;
+    public dtoExperiencia(String nombreExperiencia, String descripcionExperiencia) {
+        this.nombreExperiencia = nombreExperiencia;
+        this.descripcionExperiencia = descripcionExperiencia;
     }
 
-    public void setNombreE(String nombreE) {
-        this.nombreE = nombreE;
+    public String getNombreExperiencia() {
+        return nombreExperiencia;
     }
 
-    public String getDescripcionE() {
-        return descripcionE;
+    public void setNombreExperiencia(String nombreExperiencia) {
+        this.nombreExperiencia = nombreExperiencia;
     }
 
-    public void setDescripcionE(String descripcionE) {
-        this.descripcionE = descripcionE;
+    public String getDescripcionExperiencia() {
+        return descripcionExperiencia;
     }
+
+    public void setDescripcionExperiencia(String descripcionExperiencia) {
+        this.descripcionExperiencia = descripcionExperiencia;
+    }
+
+    @Override
+    public String toString() {
+        return "dtoExperiencia{" + "nombreExperiencia=" + nombreExperiencia + ", descripcionExperiencia=" + descripcionExperiencia + '}';
+    }
+
+    
 
 }

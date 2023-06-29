@@ -10,43 +10,53 @@ public class Habilidad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String nombre;
-    private String porcentaje;
+    private int idHabilidad;
+    private String nombreHabilidad;
+    private String porcentajeHabilidad;
 
     public Habilidad() {
     }
 
-    public Habilidad(String nombre, String porcentaje) {
-        this.nombre = nombre;
-        this.porcentaje = porcentaje;
+    public Habilidad(String nombreHabilidad, String porcentajeHabilidad) {
+        this.nombreHabilidad = nombreHabilidad;
+        this.porcentajeHabilidad = porcentajeHabilidad;
     }
 
-    public int getId() {
-        return id;
+    public Habilidad(int idHabilidad, String nombreHabilidad, String porcentajeHabilidad) {
+        this.idHabilidad = idHabilidad;
+        this.nombreHabilidad = nombreHabilidad;
+        this.porcentajeHabilidad = porcentajeHabilidad;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getIdHabilidad() {
+        return idHabilidad;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setIdHabilidad(int idHabilidad) {
+        this.idHabilidad = idHabilidad;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getNombreHabilidad() {
+        return nombreHabilidad;
     }
 
-    public String getPorcentaje() {
-        return porcentaje;
+    public void setNombreHabilidad(String nombreHabilidad) {
+        this.nombreHabilidad = nombreHabilidad;
     }
 
-    public void setPorcentaje(String porcentaje) {
-        this.porcentaje = porcentaje;
+    public String getPorcentajeHabilidad() {
+        return porcentajeHabilidad;
     }
 
-    
-    
+    public void setPorcentajeHabilidad(String porcentajeHabilidad) {
+        this.porcentajeHabilidad = porcentajeHabilidad;
+    }
+
+    @Override
+    public String toString() {
+        return "Habilidad{" + "idHabilidad=" + idHabilidad + ", nombreHabilidad=" + nombreHabilidad + ", porcentajeHabilidad=" + porcentajeHabilidad + '}';
+    }
+
+       
 
 }

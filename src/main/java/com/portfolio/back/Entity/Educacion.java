@@ -10,43 +10,54 @@ import javax.persistence.Id;
 public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String nombreE;
-    private String descripcionE;
+    private int idEducacion;
+    private String nombreEducacion;
+    private String descripcionEducacion;
 
-    //Constructores
     public Educacion() {
     }
 
-    public Educacion(String nombreE, String descripcionE) {
-        this.nombreE = nombreE;
-        this.descripcionE = descripcionE;
+    public Educacion(String nombreEducacion, String descripcionEducacion) {
+        this.nombreEducacion = nombreEducacion;
+        this.descripcionEducacion = descripcionEducacion;
     }
 
-    //Getters and setters
-    public int getId() {
-        return id;
+    public Educacion(int idEducacion, String nombreEducacion, String descripcionEducacion) {
+        this.idEducacion = idEducacion;
+        this.nombreEducacion = nombreEducacion;
+        this.descripcionEducacion = descripcionEducacion;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getIdEducacion() {
+        return idEducacion;
     }
 
-    public String getNombreE() {
-        return nombreE;
+    public void setIdEducacion(int idEducacion) {
+        this.idEducacion = idEducacion;
     }
 
-    public void setNombreE(String nombreE) {
-        this.nombreE = nombreE;
+    public String getNombreEducacion() {
+        return nombreEducacion;
     }
 
-    public String getDescripcionE() {
-        return descripcionE;
+    public void setNombreEducacion(String nombreEducacion) {
+        this.nombreEducacion = nombreEducacion;
     }
 
-    public void setDescripcionE(String descripcionE) {
-        this.descripcionE = descripcionE;
+    public String getDescripcionEducacion() {
+        return descripcionEducacion;
     }
+
+    public void setDescripcionEducacion(String descripcionEducacion) {
+        this.descripcionEducacion = descripcionEducacion;
+    }
+
+    @Override
+    public String toString() {
+        return "Educacion{" + "idEducacion=" + idEducacion + ", nombreEducacion=" + nombreEducacion + ", descripcionEducacion=" + descripcionEducacion + '}';
+    }
+
+    
 
 }
 

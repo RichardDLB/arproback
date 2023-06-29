@@ -6,10 +6,10 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface RProyecto extends JpaRepository<Proyecto, Integer>{
+public interface RepositorioProyecto extends JpaRepository<Proyecto, Integer>{
     
-    public Optional<Proyecto> findByNombre(String nombre);
+    public Optional<Proyecto> findByNombreProyecto(String nombreProyecto);
 
-    public boolean existsByNombre(String nombre);   
+    public boolean existsByNombreProyecto(String nombreProyecto);   
     
 }

@@ -11,91 +11,109 @@ public class Persona {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String nombre;
-    private String apellido;
-    private String profesion;
-    private String imgBanner;
-    private String imgPerfil;
-    private String email;
-    private String texPre;
+    private int idPersona;
+    private String nombrePersona;
+    private String apellidoPersona;
+    private String profesionPersona;
+    private String imgBannerPersona;
+    private String imgPerfilPersona;
+    private String emailPersona;
+    private String texPrePersona;
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String profesion, String imgBanner, String imgPerfil, String email, String texPre) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.profesion = profesion;
-        this.imgBanner = imgBanner;
-        this.imgPerfil = imgPerfil;
-        this.email = email;
-        this.texPre = texPre;
+    public Persona(String nombrePersona, String apellidoPersona, String profesionPersona, String imgBannerPersona, String imgPerfilPersona, String emailPersona, String texPrePersona) {
+        this.nombrePersona = nombrePersona;
+        this.apellidoPersona = apellidoPersona;
+        this.profesionPersona = profesionPersona;
+        this.imgBannerPersona = imgBannerPersona;
+        this.imgPerfilPersona = imgPerfilPersona;
+        this.emailPersona = emailPersona;
+        this.texPrePersona = texPrePersona;
     }
 
-    public int getId() {
-        return id;
+    public Persona(int idPersona, String nombrePersona, String apellidoPersona, String profesionPersona, String imgBannerPersona, String imgPerfilPersona, String emailPersona, String texPrePersona) {
+        this.idPersona = idPersona;
+        this.nombrePersona = nombrePersona;
+        this.apellidoPersona = apellidoPersona;
+        this.profesionPersona = profesionPersona;
+        this.imgBannerPersona = imgBannerPersona;
+        this.imgPerfilPersona = imgPerfilPersona;
+        this.emailPersona = emailPersona;
+        this.texPrePersona = texPrePersona;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getIdPersona() {
+        return idPersona;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setIdPersona(int idPersona) {
+        this.idPersona = idPersona;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getNombrePersona() {
+        return nombrePersona;
     }
 
-    public String getApellido() {
-        return apellido;
+    public void setNombrePersona(String nombrePersona) {
+        this.nombrePersona = nombrePersona;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public String getApellidoPersona() {
+        return apellidoPersona;
     }
 
-    public String getProfesion() {
-        return profesion;
+    public void setApellidoPersona(String apellidoPersona) {
+        this.apellidoPersona = apellidoPersona;
     }
 
-    public void setProfesion(String profesion) {
-        this.profesion = profesion;
+    public String getProfesionPersona() {
+        return profesionPersona;
     }
 
-    public String getImgBanner() {
-        return imgBanner;
+    public void setProfesionPersona(String profesionPersona) {
+        this.profesionPersona = profesionPersona;
     }
 
-    public void setImgBanner(String imgBanner) {
-        this.imgBanner = imgBanner;
+    public String getImgBannerPersona() {
+        return imgBannerPersona;
     }
 
-    public String getImgPerfil() {
-        return imgPerfil;
+    public void setImgBannerPersona(String imgBannerPersona) {
+        this.imgBannerPersona = imgBannerPersona;
     }
 
-    public void setImgPerfil(String imgPerfil) {
-        this.imgPerfil = imgPerfil;
+    public String getImgPerfilPersona() {
+        return imgPerfilPersona;
     }
 
-    public String getEmail() {
-        return email;
+    public void setImgPerfilPersona(String imgPerfilPersona) {
+        this.imgPerfilPersona = imgPerfilPersona;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public String getEmailPersona() {
+        return emailPersona;
     }
 
-    public String getTexPre() {
-        return texPre;
+    public void setEmailPersona(String emailPersona) {
+        this.emailPersona = emailPersona;
     }
 
-    public void setTexPre(String texPre) {
-        this.texPre = texPre;
+    public String getTexPrePersona() {
+        return texPrePersona;
     }
+
+    public void setTexPrePersona(String texPrePersona) {
+        this.texPrePersona = texPrePersona;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "idPersona=" + idPersona + ", nombrePersona=" + nombrePersona + ", apellidoPersona=" + apellidoPersona + ", profesionPersona=" + profesionPersona + ", imgBannerPersona=" + imgBannerPersona + ", imgPerfilPersona=" + imgPerfilPersona + ", emailPersona=" + emailPersona + ", texPrePersona=" + texPrePersona + '}';
+    }
+
+    
     
     
 

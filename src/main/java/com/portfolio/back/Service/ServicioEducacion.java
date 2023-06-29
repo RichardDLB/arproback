@@ -2,7 +2,7 @@
 package com.portfolio.back.Service;
 
 import com.portfolio.back.Entity.Educacion;
-import com.portfolio.back.Repository.REducacion;
+import com.portfolio.back.Repository.RepositorioEducacion;
 import java.util.List;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -11,35 +11,35 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class SEducacion {
+public class ServicioEducacion {
     @Autowired
-     REducacion rEducacion;
+     RepositorioEducacion rEducacion;
      
      public List<Educacion> list(){
          return rEducacion.findAll();
      }
      
-     public Optional<Educacion> getOne(int id){
-         return rEducacion.findById(id);
+     public Optional<Educacion> getOne(int idEducacion){
+         return rEducacion.findById(idEducacion);
      }
      
-     public Optional<Educacion> getByNombreE(String nombreE){
-         return rEducacion.findByNombreE(nombreE);
+     public Optional<Educacion> getByNombreEducacion(String nombreEducacion){
+         return rEducacion.findByNombreEducacion(nombreEducacion);
      }
      
      public void save(Educacion edu){
          rEducacion.save(edu);
      }
      
-     public void delete(int id){
-         rEducacion.deleteById(id);
+     public void delete(int idEducacion){
+         rEducacion.deleteById(idEducacion);
      }
      
-     public boolean existsById(int id){
-         return rEducacion.existsById(id);
+     public boolean existsById(int idEducacion){
+         return rEducacion.existsById(idEducacion);
      }
      
-     public boolean existsByNombreE(String nombreE){
-         return rEducacion.existsByNombreE(nombreE);
+     public boolean existsByNombreEducacion(String nombreEducacion){
+         return rEducacion.existsByNombreEducacion(nombreEducacion);
      }
 }

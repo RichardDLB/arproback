@@ -10,42 +10,53 @@ public class Experiencia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String nombreE;
-    private String descripcionE;
+    private int idExperiencia;
+    private String nombreExperiencia;
+    private String descripcionExperiencia;
 
-    //Constructores
     public Experiencia() {
     }
 
-    public Experiencia(String nombreE, String descripcionE) {
-        this.nombreE = nombreE;
-        this.descripcionE = descripcionE;
+    public Experiencia(String nombreExperiencia, String descripcionExperiencia) {
+        this.nombreExperiencia = nombreExperiencia;
+        this.descripcionExperiencia = descripcionExperiencia;
     }
 
-    //Getters and setters
-    public int getId() {
-        return id;
+    public Experiencia(int idExperiencia, String nombreExperiencia, String descripcionExperiencia) {
+        this.idExperiencia = idExperiencia;
+        this.nombreExperiencia = nombreExperiencia;
+        this.descripcionExperiencia = descripcionExperiencia;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getIdExperiencia() {
+        return idExperiencia;
     }
 
-    public String getNombreE() {
-        return nombreE;
+    public void setIdExperiencia(int idExperiencia) {
+        this.idExperiencia = idExperiencia;
     }
 
-    public void setNombreE(String nombreE) {
-        this.nombreE = nombreE;
+    public String getNombreExperiencia() {
+        return nombreExperiencia;
     }
 
-    public String getDescripcionE() {
-        return descripcionE;
+    public void setNombreExperiencia(String nombreExperiencia) {
+        this.nombreExperiencia = nombreExperiencia;
     }
 
-    public void setDescripcionE(String descripcionE) {
-        this.descripcionE = descripcionE;
+    public String getDescripcionExperiencia() {
+        return descripcionExperiencia;
     }
+
+    public void setDescripcionExperiencia(String descripcionExperiencia) {
+        this.descripcionExperiencia = descripcionExperiencia;
+    }
+
+    @Override
+    public String toString() {
+        return "Experiencia{" + "idExperiencia=" + idExperiencia + ", nombreExperiencia=" + nombreExperiencia + ", descripcionExperiencia=" + descripcionExperiencia + '}';
+    }
+
+    
 
 }
